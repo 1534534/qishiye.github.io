@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>起始页</title>
+    <style>
+        body {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            background-color: aqua;
+        }
+
+        div {
+
+            position: absolute;
+            top: 15rem;
+            left: 50%;
+            margin-left: -200px;
+            width: 400px;
+            height: 50px;
+            border: none;
+            padding: 0;
+            border-radius: 50px;
+
+
+            background-color: rgb(51, 36, 36);
+        }
+
+        #in {
+            position: absolute;
+            left: 0;
+            width: 300px;
+            height: 97%;
+            outline: none;
+            font-size: 20px;
+            padding-left: 20px;
+            font-family: 'Courier New', Courier, monospace;
+
+            color: rgb(255, 255, 255);
+            border-radius: 50px;
+            border: none;
+            background-color: rgb(51, 36, 36);
+        }
+
+        button {
+            position: absolute;
+            width: 90px;
+            right: 0;
+            height: 50px;
+            border-radius: 50%;
+            color: aliceblue;
+            font-size: 20px;
+            background-color: rgb(51, 36, 36);
+            font-family: 'Courier New', Courier, monospace;
+
+            border: none;
+        }
+
+        button:hover {
+            color: rgb(201, 24, 24);
+        }
+
+        button:active {
+            color: rgb(133, 25, 141)
+        }
+    </style>
+    <script>
+
+        let txt = 0
+        function Change() {
+            const btn = document.getElementById('btn')
+            const wancheng = document.getElementById('wancheng')
+            const shuRu = document.getElementById('in')
+            if (txt) {
+
+                wancheng.innerText = "未完成";
+                txt = 0;
+                console.log('未完成',txt);
+            } else {
+
+                wancheng.innerText = "已完成"
+                shuRu.value = '';
+                shuRu.readyOnly = false;
+                txt = 1;
+                console.log('已完成',txt);
+            }
+        }
+
+        
+
+    </script>
+
+</head>
+
+<body>
+    <div class="box">
+
+        <input id="in" type="text" placeholder="要做的事">
+        <button id="btn" onclick="Change()"><span id="wancheng">已完成</span></button>
+
+    </div>
+</body>
+
+</html>
